@@ -47,4 +47,14 @@ for job_directory in "$jobs_directory"/*; do
 done
 
 echo "Backup completed."
+# Add all files to the Git repository
+git -C "$backup_directory" add .
+
+# Commit the changes with a message containing the current date
+git -C "$backup_directory" commit -m "Backup updated on $current_date"
+
+# Push the changes 
+git -C "$backup_directory" push
+
+echo "Git commit completed."
 
