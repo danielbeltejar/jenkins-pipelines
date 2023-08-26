@@ -15,26 +15,19 @@ pipeline {
                 - sleep
                 args:
                 - infinity
-              - name: maven
-                image: 3.9.3-amazoncorretto-20
-                command:
-                - sleep
-                args:
-                - infinity
-                tty: true
               restartPolicy: Never
             """
         }
     }
 
     environment {
-        gitUrl = "https://github.com/danielbeltejar/pokemon-weather-map/"
-        project = "pro-pokemon-weather-map"
+        gitUrl = "https://github.com/danielbeltejar/homepage/"
+        project = "pro-homepage"
         projectRoot = "${gitUrl.tokenize("/")[-1].replaceAll(".git", "")}"
-        projectFolder = "webservice-forecast"
+        projectFolder = "client"
         imageName = "${gitUrl.tokenize("/")[-1].replaceAll(".git", "")}-${projectFolder}"
         kind = "deployment"
-        kindName = "today-forecast-ws-forecast"
+        kindName = "nginx-deployment"
         
         containerName = ""
         imageTag = ""
@@ -48,13 +41,6 @@ pipeline {
                               branches: [[name: 'main']],
                               userRemoteConfigs: [[url: "${gitUrl}"]]
                     ])
-                }
-            }
-        }
-        stage('Build artifact') {
-            steps {
-                container('maven') {
-                    sh 'mvn clean package'
                 }
             }
         }

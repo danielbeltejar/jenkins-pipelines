@@ -14,7 +14,7 @@ pipeline {
                 command:
                 - sleep
                 args:
-                - 9999999
+                - infinity
               restartPolicy: Never
             """
         }
