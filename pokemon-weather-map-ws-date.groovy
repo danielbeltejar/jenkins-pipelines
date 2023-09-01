@@ -75,7 +75,8 @@ pipeline {
                         --context=`pwd` \
                         --dockerfile=`pwd`/Dockerfile \
                         --destination=registry-service.lab-registry.svc.cluster.local:5000/${imageName}:${imageTag} \
-                        --destination=registry-service.lab-registry.svc.cluster.local:5000/${imageName}:latest
+                        --destination=registry-service.lab-registry.svc.cluster.local:5000/${imageName}:latest \
+                        --cache=true
                         """
                     }
                 }
