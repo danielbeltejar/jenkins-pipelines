@@ -24,7 +24,7 @@ pipeline {
         gitUrl = "https://github.com/danielbeltejar/pokemon-weather-map/"
         project = "pro-pokemon-weather-map"
         projectRoot = "${gitUrl.tokenize("/")[-1].replaceAll(".git", "")}"
-        projectFolder = "backend"
+        projectFolder = "server"
         imageName = "${gitUrl.tokenize("/")[-1].replaceAll(".git", "")}-${projectFolder}"
         kind = "cronjob"
         kindName = "app-cronjob"

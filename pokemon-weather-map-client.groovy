@@ -27,7 +27,7 @@ pipeline {
         projectFolder = "client"
         imageName = "${gitUrl.tokenize("/")[-1].replaceAll(".git", "")}-${projectFolder}"
         kind = "deployment"
-        kindName = "client-nginx-deployment"
+        kindName = "nginx-client-deployment"
         
         containerName = ""
         imageTag = ""
