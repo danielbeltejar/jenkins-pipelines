@@ -24,8 +24,8 @@ pipeline {
         gitUrl = "https://github.com/juanFRANvelilla/juanFranciscoPerezWeb/"
         project = "pro-jf-homepage"
         projectRoot = "${gitUrl.tokenize("/")[-1].replaceAll(".git", "")}"
-        projectFolder = "client"
-        imageName = "${gitUrl.tokenize("/")[-1].replaceAll(".git", "")}-${projectFolder}"
+        projectFolder = "."
+        imageName = "jf-homepage-client"
         kind = "deployment"
         kindName = "client-nginx-deployment"
         
